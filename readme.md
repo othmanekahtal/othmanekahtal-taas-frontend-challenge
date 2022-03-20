@@ -21,8 +21,8 @@
 - tailwindCss (optional)
 
 ## Project decomposition :
-- [ ] make authorization with github - backend.
-- [ ] Host backend - .[Heroku](https://heroku.com/)
+- [x] make authorization with github - backend.
+- [x] Host backend on [Heroku](https://heroku.com/)
 - [ ] make authorization with github - frontend.
 - [ ] save information of user and github access token ( localStorage and state management ).
 - [ ] make protect routing in front-end.

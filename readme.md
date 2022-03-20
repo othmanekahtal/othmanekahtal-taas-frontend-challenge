@@ -11,7 +11,7 @@
 - I can switch the branch, then the commits listing is being refreshed.
 
 ### Back-end :
-
+- build own backend for oauth with Github
 - Github REST API v3 as a backend.
 
 ### Front-end :
@@ -32,3 +32,4 @@
 - [ ] show commit history with infinite scroll (commits are related with branch).
 - [ ] add dark mode toggle.
 - [ ] add go to top button.
+

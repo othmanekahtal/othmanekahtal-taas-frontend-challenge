@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#nprogress .bar {
+  @apply bg-blue-500;
+  height: 4px !important;
+}
+#nprogress .spinner-icon {
+  width: 35px !important;
+  height: 35px !important;
+  border-width: 4px !important;
+}

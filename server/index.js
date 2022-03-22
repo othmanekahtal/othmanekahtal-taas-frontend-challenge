@@ -4,9 +4,7 @@ require("dotenv").config();
 
 const app = express();
 const { CLIENT_ID: client_id, CLIENT_SECRET: client_secret } = process.env;
-app.get("/", (req, res) => 
-  res.status(200).send("Hi server is Live 🚀");
-);
+app.get("/", (req, res) => res.status(200).send("Hi server is Live 🚀"));
 app.get("/callback", async (req, res) => {
   const { code } = req.query;
   let { body } = await superagent.post(

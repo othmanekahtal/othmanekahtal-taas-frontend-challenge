@@ -1,7 +1,7 @@
 const superagent = require("superagent");
 const express = require("express");
 require("dotenv").config();
-
+const port = process.env.PORT || 3000;
 const app = express();
 const { CLIENT_ID: client_id, CLIENT_SECRET: client_secret } = process.env;
 app.get("/", (req, res) => res.status(200).send("Hi server is Live 🚀"));
@@ -17,6 +17,6 @@ app.get("/callback", async (req, res) => {
   );
   res.redirect(`http://localhost:3000/auth/github?token=${body.access_token}`);
 });
-app.listen(8888, () => {
+app.listen(port, () => {
   console.log(`The server is running at http://localhost:8888`);
 });

@@ -11,6 +11,10 @@ const router = createRouter({
       alias: "/login",
       name: "Login",
       component: LoginView,
+      beforeEnter(_, __, next) {
+        const { token } = useStore();
+        token ? next({ name: "Dashboard" }) : next();
+      },
     },
 
     {
@@ -20,6 +24,10 @@ const router = createRouter({
         import(
           /* webpackChunkName: "auth-github-view" */ "@/views/AuthGithub.vue"
         ),
+      beforeEnter(_, __, next) {
+        const { token } = useStore();
+        token ? next({ name: "Dashboard" }) : next();
+      },
     },
     {
       path: "/dashboard",
@@ -28,6 +36,10 @@ const router = createRouter({
         import(
           /* webpackChunkName: "Repos-view" */ "@/views/DashboardView.vue"
         ),
+      beforeEnter(_, __, next) {
+        const { token } = useStore();
+        token ? next() : next({ name: "Login" });
+      },
     },
 
     {
@@ -36,6 +48,14 @@ const router = createRouter({
       component: () =>
         import(/* webpackChunkName: "error-404-view" */ "@/views/Error404.vue"),
     },
+    // {
+    //   path: "/network-error",
+    //   name: "NetworkError",
+    //   component: () =>
+    //     import(
+    //       /* webpackChunkName: "error-404-view" */ "@/views/NetworkError.vue"
+    //     ),
+    // },
   ],
 });
 router.beforeEach(() => {

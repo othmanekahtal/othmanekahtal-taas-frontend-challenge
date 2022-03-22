@@ -24,9 +24,9 @@
 - [x] make authorization with github - backend.
 - [x] Host backend on [Heroku](https://heroku.com/)
 - [x] make authorization with github - frontend.
-- [ ] save information of user and github access token ( localStorage and state management ).
-- [ ] make protect routing in front-end.
-- [ ] fetching user information.
+- [x] save information of user and github access token ( localStorage and state management ).
+- [x] make protect routing in front-end.
+- [x] fetching user information.
 - [ ] fetching repositories and listing all repositories of user.
 - [ ] add search by repositories.
 - [ ] add pagination or infinite scroll in repository list.

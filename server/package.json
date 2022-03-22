@@ -9,7 +9,8 @@
     "superagent": "^7.1.1"
   },
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

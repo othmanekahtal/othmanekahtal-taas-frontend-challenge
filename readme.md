@@ -30,7 +30,7 @@
 - [x] fetching repositories and listing all repositories of user.
 - [x] add search by repositories.
 - [x] add pagination or infinite scroll in repository list.
-- [ ] show commit history with infinite scroll (commits are related with branch).
+- [x] show commit history with infinite scroll (commits are related with branch).
 - [x] add dark mode toggle.
 - [x] add go to top button.
 

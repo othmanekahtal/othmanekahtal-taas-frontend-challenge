@@ -41,7 +41,16 @@ const router = createRouter({
         token ? next() : next({ name: "Login" });
       },
     },
-
+    {
+      path: "/repos/:repo",
+      name: "Repo",
+      component: () =>
+        import(/* webpackChunkName: "Repos-view" */ "@/views/RepoView.vue"),
+      beforeEnter(_, __, next) {
+        const { token } = useStore();
+        token ? next() : next({ name: "Login" });
+      },
+    },
     {
       path: "/:catchAll(.*)",
       name: "Error404",

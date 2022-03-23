@@ -2,7 +2,6 @@ import { defineStore } from "pinia";
 import type { Repo } from "@/interfaces/repo";
 import type { Actions } from "@/interfaces/actions";
 
-import type { User } from "@/interfaces/user";
 export const useStore = defineStore("main", {
   state: () =>
     <States>{
@@ -123,7 +122,10 @@ export const useStore = defineStore("main", {
     },
     async getRepo(repo) {
       if (this.repos.length) {
-        return this.repos.filter((element) => element["name"] == repo)[0];
+        const repoFiltered = this.repos.filter(
+          (element) => element["name"] == repo
+        )[0];
+        if (repoFiltered) return repoFiltered;
       }
       const response = await fetch(
         `https://api.github.com/repos/${this.user.login}/${repo}`,

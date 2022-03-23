@@ -27,10 +27,10 @@
 - [x] save information of user and github access token ( localStorage and state management ).
 - [x] make protect routing in front-end.
 - [x] fetching user information.
-- [ ] fetching repositories and listing all repositories of user.
-- [ ] add search by repositories.
-- [ ] add pagination or infinite scroll in repository list.
+- [x] fetching repositories and listing all repositories of user.
+- [x] add search by repositories.
+- [x] add pagination or infinite scroll in repository list.
 - [ ] show commit history with infinite scroll (commits are related with branch).
-- [ ] add dark mode toggle.
-- [ ] add go to top button.
+- [x] add dark mode toggle.
+- [x] add go to top button.
 

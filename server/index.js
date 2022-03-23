@@ -15,7 +15,7 @@ app.get("/callback", async (req, res) => {
       code,
     }
   );
-  res.redirect(`http://localhost:3000/auth/github?token=${body.access_token}`);
+  res.redirect(`https://github-app-youcan.onrender.com/auth/github?token=${body.access_token}`);
 });
 app.listen(port, () => {
   console.log(`The server is running at http://localhost:8888`);

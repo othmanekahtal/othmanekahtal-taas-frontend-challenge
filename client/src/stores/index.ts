@@ -94,6 +94,7 @@ export const useStore = defineStore("main", {
         userID: this.user.login,
       });
       this.clearCredentials(response.status);
+      if (response.status) this.router.push({ name: "Error404" });
       const data = await response.json();
       return data;
     },
@@ -109,6 +110,7 @@ export const useStore = defineStore("main", {
         userID: this.user.login,
       });
       this.clearCredentials(response.status);
+      if (response.status) this.router.push({ name: "Error404" });
       const data = await response.json();
       return data;
     },

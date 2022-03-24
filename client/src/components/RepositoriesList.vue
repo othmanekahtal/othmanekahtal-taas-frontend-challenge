@@ -24,7 +24,7 @@ const fetchingRepos = async () => {
   }
   if (response.data?.length) {
     hasNext.value = !!response.hasNext;
-    repos.value = [...(repos.value as Repo[] | []), ...response?.data];
+    repos.value = [...(repos.value as Repo[] | []), ...response.data];
   }
   page.value += hasNext.value ? 1 : 0;
   loading.value = false;
@@ -120,6 +120,7 @@ onMounted(() => {
       <li
         class="block py-3 pl-4 dark:hover:bg-slate-600 hover:bg-gray-100 transition"
         v-for="repo in filteredRepos"
+        :key="`filtered_${repo}`"
       >
         <RouterLink
           :to="{ name: 'Repo', params: { repo: repo.name } }"

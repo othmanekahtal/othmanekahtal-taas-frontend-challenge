@@ -1,7 +1,7 @@
 const superagent = require("superagent");
 const express = require("express");
 require("dotenv").config();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8888;
 const app = express();
 const { CLIENT_ID: client_id, CLIENT_SECRET: client_secret } = process.env;
 app.get("/", (req, res) => res.status(200).send("Hi server is Live 🚀"));
@@ -15,8 +15,10 @@ app.get("/callback", async (req, res) => {
       code,
     }
   );
-  res.redirect(`https://github-app-youcan.onrender.com/auth/github?token=${body.access_token}`);
+  res.redirect(
+    `${process.env.FRONT_URL}/auth/github?token=${body.access_token}`
+  );
 });
 app.listen(port, () => {
-  console.log(`The server is running at http://localhost:8888`);
+  console.log(`The server is running at http://localhost:${port}`);
 });

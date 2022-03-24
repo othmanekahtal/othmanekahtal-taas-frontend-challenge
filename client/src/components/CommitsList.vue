@@ -6,8 +6,8 @@ import { useRouter } from "vue-router";
 import { onMounted, ref, watch, type Ref } from "vue";
 import CommitsListSkeleton from "./Skeleton/CommitsListSkeleton.vue";
 const store = useStore();
-const { repo } = defineProps<{ repo: string }>();
-const { default_branch } = await store.getRepo(repo);
+const props = defineProps<{ repo: string }>();
+const { default_branch } = await store.getRepo(props.repo);
 const commits = ref<any>([]);
 let hasNext = ref(true);
 let page = ref(1);
@@ -15,15 +15,15 @@ let page = ref(1);
 let loading = ref(false);
 
 const branch = ref(default_branch);
-const allBranches = await store.getBranches(repo);
+const allBranches = await store.getBranches(props.repo);
 const fetchCommits = async (branch: Ref<string>, page: Ref<number>) => {
-  const response = await store.getCommits(branch.value, page.value, repo);
+  const response = await store.getCommits(branch.value, page.value, props.repo);
   if (!Object.keys(response).length) {
     const router = useRouter();
     router.push({ name: "Login" });
   }
   hasNext.value = !!response.hasNext;
-  commits.value = [...commits.value, ...response?.data];
+  commits.value = [...commits.value, ...response.data];
   page.value += hasNext.value ? 1 : 0;
 };
 await fetchCommits(branch, page);

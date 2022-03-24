@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { RouterLink } from "vue-router";
 
-const { name, description } = defineProps<{
+const props = defineProps<{
   name: string;
   description?: string;
   defaultBranch: string;
@@ -12,13 +12,13 @@ const { name, description } = defineProps<{
     class="flex flex-col p-6 bg-white rounded-3xl border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
   >
     <h5 class="mb-2 font-medium tracking-tight text-gray-900 dark:text-white">
-      {{ name }}
+      {{ props.name }}
     </h5>
     <p class="mb-3 font-light text-gray-700 dark:text-gray-400 break-all">
-      {{ description ?? "No description" }}
+      {{ props.description ?? "No description" }}
     </p>
     <RouterLink
-      :to="{ name: 'Repo', params: { repo: name } }"
+      :to="{ name: 'Repo', params: { repo: props.name } }"
       class="ml-auto inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
     >
       more info

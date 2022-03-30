@@ -33,4 +33,3 @@
 - [x] show commit history with infinite scroll (commits are related with branch).
 - [x] add dark mode toggle.
 - [x] add go to top button.
-
